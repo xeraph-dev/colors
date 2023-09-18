@@ -1,0 +1,77 @@
+{
+  "name": "@xeraph-dev/colors",
+  "version": "0.1.2",
+  "description": "Colors for console.log",
+  "license": "MIT",
+  "type": "module",
+  "author": {
+    "url": "https://xeraph.dev",
+    "name": "Xeraph"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xeraph-dev/colors"
+  },
+  "homepage": "https://github.com/xeraph-dev/colors",
+  "bugs": "https://github.com/xeraph-dev/colors/issues",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./global": {
+      "types": "./dist/global.d.ts",
+      "import": "./dist/global.js",
+      "require": "./dist/global.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "./dist",
+    "./src",
+    "./package.json"
+  ],
+  "scripts": {
+    "build": "bun build.ts",
+    "types": "tsc -p tsconfig.types.json",
+    "check": "tsc",
+    "docs:type": "typedoc",
+    "test": "bun test",
+    "test:watch": "bun test --watch",
+    "test:coverage": "bun test --coverage",
+    "test:coverage:watch": "bun test --coverage --watch",
+    "test:mutate": "stryker run",
+    "prepare": "husky install",
+    "lint": "eslint ./src/** --fix",
+    "change": "changeset",
+    "release": "bun run build && changeset publish",
+    "version": "changeset version"
+  },
+  "prettier": "@xeraph-dev/prettier-config",
+  "eslintConfig": {
+    "extends": "@xeraph-dev",
+    "rules": {
+      "no-extend-native": "off",
+      "no-control-regex": "off"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@changesets/cli": "^2.26.2",
+    "@stryker-mutator/api": "^7.1.1",
+    "@stryker-mutator/core": "^7.1.1",
+    "@xeraph-dev/eslint-config": "^0.0.4",
+    "@xeraph-dev/prettier-config": "^0.0.5",
+    "bun-types": "^1.0.2",
+    "esbuild": "^0.19.3",
+    "glob": "^10.3.4",
+    "husky": "^8.0.0",
+    "pretty-bytes": "^6.1.1",
+    "stryker-cli": "^1.0.2",
+    "typedoc": "^0.25.1",
+    "typescript": "^5.2.2"
+  },
+  "peerDependencies": {},
+  "peerDependenciesMeta": {}
+}
