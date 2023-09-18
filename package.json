@@ -1,6 +1,6 @@
 {
   "name": "@xeraph-dev/colors",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Colors for console.log",
   "license": "MIT",
   "type": "module",
@@ -44,7 +44,8 @@
     "test:coverage:watch": "bun test --coverage --watch",
     "test:mutate": "stryker run",
     "prepare": "husky install",
-    "lint": "eslint ./src/** --fix",    "change": "changeset",
+    "lint": "eslint ./src/** --fix",
+    "change": "changeset",
     "release": "bun run build && changeset publish",
     "version": "changeset version"
   },
