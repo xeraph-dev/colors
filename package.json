@@ -35,7 +35,8 @@
   "scripts": {
     "build": "bun build.ts",
     "types": "tsc -p tsconfig.types.json",
-    "check": "tsc",
+    "check:types": "tsc",
+    "check:lint": "eslint ./src/**",
     "docs:type": "typedoc",
     "test": "bun test",
     "test:watch": "bun test --watch",
@@ -43,8 +44,7 @@
     "test:coverage:watch": "bun test --coverage --watch",
     "test:mutate": "stryker run",
     "prepare": "husky install",
-    "lint": "eslint ./src/** --fix",
-    "change": "changeset",
+    "lint": "eslint ./src/** --fix",    "change": "changeset",
     "release": "bun run build && changeset publish",
     "version": "changeset version"
   },

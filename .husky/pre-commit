@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-bun run lint
-bun run check
+bun run check:lint
+bun run check:types
 bun test
 bun test:coverage
 bun test:mutate
