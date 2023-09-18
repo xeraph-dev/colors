@@ -15,7 +15,7 @@ if (existsSync(dist)) rmSync(dist, { recursive: true })
   console.time('check types'.green)
   console.info('Running', 'bun'.green, 'run check')
   const { stdout } = Bun.spawnSync({
-    cmd: ['bun', 'run', 'check'],
+    cmd: ['bun', 'run', 'check:types'],
   })
   const output = await new Response(stdout).text()
   if (output) {
